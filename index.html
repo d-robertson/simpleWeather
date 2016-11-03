@@ -31,7 +31,7 @@
           <h1 class="text-center title">Weather For {{res.name}}</h1>
         </div>
         <div class="row text-center content">
-          <h2>{{res.main.temp}}</h2>
+          <h2 ng-click="toggleDegrees()">{{temp}}&deg{{letter}}</h2>
           <h2>{{res.weather[0].main}}</h2>
           <!-- <img src="http://api.openweathermap.org/img/w/{{res.weather[0].icon}}.png"> -->
           <canvas id="icon1" width="64" height="64"></canvas>

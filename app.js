@@ -4,15 +4,6 @@
 angular.module('weatherApp', [])
 
 .run(['$rootScope', '$http', function($rootScope, $http){
-  // var list  = {
-  //   "clear-day", //clear sky
-  //   "partly-cloudy-day", // broken clouds, few clouds 
-  //   "cloudy", //scattered clouds
-  //   "rain", //rain, shower rain, thunderstorm
-  //   "snow", //snow
-  //   "fog"  //mist
-  // }
-
 
   function getLocation(){
     if(navigator.geolocation){
@@ -35,6 +26,7 @@ angular.module('weatherApp', [])
         $http(req).then(function success(res){
           console.log('success: ', res);
           $rootScope.res = res.data;
+          $rootScope.temp = Math.floor(res.data.main.temp);
           $rootScope.icon = res.data.weather[0].description;
           console.log("Icon:", $rootScope.icon)
 
@@ -51,7 +43,7 @@ angular.module('weatherApp', [])
     //-------------------------------------------------
     function setIcon(){
 
-      var icons = new Skycons();
+      var icons = new Skycons({"color": "#eeb154"});
 
       var giph;
 
@@ -98,8 +90,16 @@ angular.module('weatherApp', [])
 
 .controller('weatherCtrl', ['$scope', '$http', function($scope, $http){
 
-  $scope.toggleDegrees = function(){
+  $scope.letter = "F";
 
+  $scope.toggleDegrees = function(){
+    if($scope.letter === "F"){
+      $scope.letter = "C";
+      $scope.temp = Math.floor(($scope.temp - 32) * (5/9));
+    } else {
+      $scope.letter = "F";
+      $scope.temp = Math.ceil(($scope.temp * (9/5)) + 32);
+    }
   }
 
 }]);

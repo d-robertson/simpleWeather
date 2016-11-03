@@ -178,7 +178,7 @@
   }
 
   function cloud(ctx, t, cx, cy, cw, s, color) {
-    t /= 30000;
+    t /= 3000;
 
     var a = cw * 0.21,
         b = cw * 0.12,
@@ -194,7 +194,7 @@
   }
 
   function sun(ctx, t, cx, cy, cw, s, color) {
-    t /= 120000;
+    t /= 12000;
 
     var a = cw * 0.25 - s * 0.5,
         b = cw * 0.32 + s * 0.5,
@@ -219,7 +219,7 @@
   }
 
   function moon(ctx, t, cx, cy, cw, s, color) {
-    t /= 15000;
+    t /= 1500;
 
     var a = cw * 0.29 - s * 0.5,
         b = cw * 0.05,
@@ -241,7 +241,7 @@
   }
 
   function rain(ctx, t, cx, cy, cw, s, color) {
-    t /= 1350;
+    t /= 135;
 
     var a = cw * 0.16,
         b = TAU * 11 / 12,
@@ -262,7 +262,7 @@
   }
 
   function sleet(ctx, t, cx, cy, cw, s, color) {
-    t /= 750;
+    t /= 75;
 
     var a = cw * 0.1875,
         b = TAU * 11 / 12,
@@ -283,7 +283,7 @@
   }
 
   function snow(ctx, t, cx, cy, cw, s, color) {
-    t /= 3000;
+    t /= 300;
 
     var a  = cw * 0.16,
         b  = s * 0.75,
@@ -315,7 +315,7 @@
   }
 
   function fogbank(ctx, t, cx, cy, cw, s, color) {
-    t /= 30000;
+    t /= 3000;
 
     var a = cw * 0.21,
         b = cw * 0.06,
