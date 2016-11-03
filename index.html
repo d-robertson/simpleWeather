@@ -19,12 +19,24 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
 
+    <script type="text/javascript" src="skycons-master/skycons.js"></script>
+
     <script src="app.js"></script>
     
   </head>
   <body ng-app="weatherApp">
-    <div ng-controller="weatherCtrl">
-      <button ng-click="showInfo()">Show Info</button>
+    <div ng-controller="weatherCtrl" class="container">
+      <div class="col-xs-12">
+        <div class="row">
+          <h1 class="text-center title">Weather For {{res.name}}</h1>
+        </div>
+        <div class="row text-center content">
+          <h2>{{res.main.temp}}</h2>
+          <h2>{{res.weather[0].main}}</h2>
+          <!-- <img src="http://api.openweathermap.org/img/w/{{res.weather[0].icon}}.png"> -->
+          <canvas id="icon1" width="64" height="64"></canvas>
+        </div>
+      </div>
     </div>
   </body>
 </html>

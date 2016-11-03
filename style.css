@@ -1,0 +1,27 @@
+/*color pallet*/
+/*#282828 dark grey*/
+/*#b1bfbf blue grey*/
+/*#bdbd9d green grey*/
+/*#f2bf6d light yellow*/
+/*#eeb154 dark yellow*/
+
+body {
+  background-color: #282828;
+}
+
+img {
+  width: 150px;
+  height: 150px;
+}
+
+.title {
+  font-size: 60px;
+  color: #bdbd9d;
+  margin-top: 50px;
+}
+
+.content {
+  color: #b1bfbf;
+}
+
+
