@@ -1,4 +1,4 @@
-//api key = 7c1036ddfe7bb328dfb9f941f670c99e;
+//api key =   sz4GkqTfOW0YRndljAcQ3lWV45rAnFyF;
 //http://api.openweathermap.org/img/w/{code}.png
 
 angular.module('weatherApp', [])
@@ -14,7 +14,7 @@ angular.module('weatherApp', [])
         var lng = position.coords.longitude;
 
         var req = {
-          url: 'http://api.openweathermap.org/data/2.5/weather?APPID=7c1036ddfe7bb328dfb9f941f670c99e',
+          url: '//api.openweathermap.org/data/2.5/weather?APPID=7c1036ddfe7bb328dfb9f941f670c99e',
           method: 'GET',
           params: {
             lat: lat,
@@ -28,7 +28,7 @@ angular.module('weatherApp', [])
           $rootScope.res = res.data;
           $rootScope.temp = Math.floor(res.data.main.temp);
           $rootScope.icon = res.data.weather[0].description;
-          console.log("Icon:", $rootScope.icon)
+          console.log("Icon:", $rootScope.icon);
 
           setIcon();
 
@@ -47,6 +47,8 @@ angular.module('weatherApp', [])
 
       var giph;
 
+      console.log($rootScope.icon);
+
       switch($rootScope.icon) {
         case "mist": 
           giph = "fog"
@@ -63,6 +65,9 @@ angular.module('weatherApp', [])
         case "scattered clouds":
           giph = "cloudy"
           break;
+        case "overcast clouds":
+          giph = "cloudy"
+          break;
         case "rain":
           giph = "rain"
           break;
@@ -74,6 +79,9 @@ angular.module('weatherApp', [])
           break;
         case "snow":
           giph = "snow"
+          break;
+        case "heavy intensity rain":
+          giph = "rain"
           break;
       }
      

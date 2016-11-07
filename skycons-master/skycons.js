@@ -241,7 +241,7 @@
   }
 
   function rain(ctx, t, cx, cy, cw, s, color) {
-    t /= 135;
+    t /= 1350;
 
     var a = cw * 0.16,
         b = TAU * 11 / 12,
@@ -262,7 +262,7 @@
   }
 
   function sleet(ctx, t, cx, cy, cw, s, color) {
-    t /= 75;
+    t /= 750;
 
     var a = cw * 0.1875,
         b = TAU * 11 / 12,
@@ -283,7 +283,7 @@
   }
 
   function snow(ctx, t, cx, cy, cw, s, color) {
-    t /= 300;
+    t /= 3000;
 
     var a  = cw * 0.16,
         b  = s * 0.75,
